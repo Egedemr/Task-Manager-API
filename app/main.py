@@ -4,12 +4,14 @@ from app.db.database import engine
 from app.db.base import Base
 from app.models import user, task  # noqa: F401
 from app.api.auth import router as auth_router
+from app.api.tasks import router as tasks_router
 
 app = FastAPI(title="Task Manager API")
 
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth_router)
+app.include_router(tasks_router) 
 
 @app.get("/")
 def root():
