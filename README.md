@@ -35,6 +35,12 @@ Do not commit `.env` (it contains local secrets).
 uvicorn app.main:app --reload
 ```
 
+## Run with Docker
+
+```bash
+docker compose up --build
+```
+
 Open API docs:
 - http://localhost:8000/docs
 
